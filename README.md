@@ -1,3 +1,3 @@
 # Running
 
-Can be run with `go install
+Can be run with `go install && qap
