@@ -1,3 +1,3 @@
 # Running
 
-Can be r
+Can be run with `g
