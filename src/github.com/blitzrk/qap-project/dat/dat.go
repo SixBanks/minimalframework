@@ -7,4 +7,4 @@ import (
 	"strings"
 )
 
-// Reads a .dat file where the
+// Reads a .dat file where the entries
