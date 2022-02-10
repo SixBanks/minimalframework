@@ -7,4 +7,5 @@ import (
 	"strings"
 )
 
-// Reads a .dat file where the entries are matricies of number
+// Reads a .dat file where the entries are matricies of numbers
+// separated by
