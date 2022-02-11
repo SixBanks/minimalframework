@@ -8,4 +8,4 @@ import (
 )
 
 // Reads a .dat file where the entries are matricies of numbers
-// separated by empty new li
+// separated by empty new lines and in
