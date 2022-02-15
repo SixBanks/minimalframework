@@ -9,4 +9,4 @@ import (
 
 // Reads a .dat file where the entries are matricies of numbers
 // separated by empty new lines and individually aligned with
-// whitespace between row entries and
+// whitespace between row entries and newlines betw
