@@ -11,4 +11,4 @@ import (
 // separated by empty new lines and individually aligned with
 // whitespace between row entries and newlines between rows
 func Read(file []byte) []matrix.Matrix {
-	data := make([]matrix
+	data := make([]matrix.Matrix, 0
