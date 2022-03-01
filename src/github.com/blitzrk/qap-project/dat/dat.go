@@ -12,4 +12,4 @@ import (
 // whitespace between row entries and newlines between rows
 func Read(file []byte) []matrix.Matrix {
 	data := make([]matrix.Matrix, 0)
-	for _, mat := range bytes.Split
+	for _, mat := range bytes.Split(file, []byte("
