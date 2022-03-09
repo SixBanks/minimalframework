@@ -13,4 +13,5 @@ import (
 func Read(file []byte) []matrix.Matrix {
 	data := make([]matrix.Matrix, 0)
 	for _, mat := range bytes.Split(file, []byte("\n\n")) {
-		temp := make(matrix.Ma
+		temp := make(matrix.Matrix, 0)
+	
