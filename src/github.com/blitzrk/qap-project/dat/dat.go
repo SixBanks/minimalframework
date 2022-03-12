@@ -14,4 +14,5 @@ func Read(file []byte) []matrix.Matrix {
 	data := make([]matrix.Matrix, 0)
 	for _, mat := range bytes.Split(file, []byte("\n\n")) {
 		temp := make(matrix.Matrix, 0)
-		didParse := 
+		didParse := true
+	Elem
