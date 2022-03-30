@@ -17,4 +17,5 @@ func Read(file []byte) []matrix.Matrix {
 		didParse := true
 	Element:
 		for _, row := range bytes.Split(mat, []byte("\n")) {
-			floatsAsStrings := strings.Fields(string(ro
+			floatsAsStrings := strings.Fields(string(row))
+			elms := m
