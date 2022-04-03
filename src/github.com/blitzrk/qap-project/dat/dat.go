@@ -19,4 +19,5 @@ func Read(file []byte) []matrix.Matrix {
 		for _, row := range bytes.Split(mat, []byte("\n")) {
 			floatsAsStrings := strings.Fields(string(row))
 			elms := make([]matrix.Element, 0)
-			for _, s := range floatsAsStr
+			for _, s := range floatsAsStrings {
+				f
