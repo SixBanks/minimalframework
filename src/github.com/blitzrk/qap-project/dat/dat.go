@@ -20,4 +20,4 @@ func Read(file []byte) []matrix.Matrix {
 			floatsAsStrings := strings.Fields(string(row))
 			elms := make([]matrix.Element, 0)
 			for _, s := range floatsAsStrings {
-				f
+				f, err := strc
