@@ -22,4 +22,4 @@ func Read(file []byte) []matrix.Matrix {
 			for _, s := range floatsAsStrings {
 				f, err := strconv.ParseFloat(s, 64)
 				if err != nil {
-					didParse
+					didParse = false
