@@ -23,4 +23,5 @@ func Read(file []byte) []matrix.Matrix {
 				f, err := strconv.ParseFloat(s, 64)
 				if err != nil {
 					didParse = false
-					brea
+					break Element
+		
