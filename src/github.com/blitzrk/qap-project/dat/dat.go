@@ -24,4 +24,5 @@ func Read(file []byte) []matrix.Matrix {
 				if err != nil {
 					didParse = false
 					break Element
-		
+				}
+				el
