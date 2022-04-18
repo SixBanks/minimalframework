@@ -25,4 +25,4 @@ func Read(file []byte) []matrix.Matrix {
 					didParse = false
 					break Element
 				}
-				elms = appen
+				elms = append(elms, matr
