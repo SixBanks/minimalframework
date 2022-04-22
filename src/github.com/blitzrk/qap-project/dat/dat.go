@@ -30,4 +30,4 @@ func Read(file []byte) []matrix.Matrix {
 			temp = append(temp, elms)
 		}
 
-		if didParse 
+		if didParse && len(te
