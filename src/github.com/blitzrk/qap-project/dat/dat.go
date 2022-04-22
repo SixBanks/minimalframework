@@ -27,4 +27,5 @@ func Read(file []byte) []matrix.Matrix {
 				}
 				elms = append(elms, matrix.Element(f))
 			}
-			temp = append(te
+			temp = append(temp, elms)
+		}
