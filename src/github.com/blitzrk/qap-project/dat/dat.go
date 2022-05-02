@@ -34,4 +34,5 @@ func Read(file []byte) []matrix.Matrix {
 			data = append(data, temp)
 		}
 	}
-	return 
+	return data
+}
