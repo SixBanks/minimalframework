@@ -31,4 +31,7 @@ func Read(file []byte) []matrix.Matrix {
 		}
 
 		if didParse && len(temp[0]) > 0 {
-			data = append(data, 
+			data = append(data, temp)
+		}
+	}
+	return 
