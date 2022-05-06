@@ -28,3 +28,13 @@ func (g *generator) Distance() (matrix.Matrix, error) {
 	}
 
 	return m, nil
+}
+
+func (g *generator) Flow(spread float64) (matrix.Matrix, error) {
+	if spread < 0 || spread >= 1 {
+		return nil, fmt.Errorf("Error: spread must be between 0 and 1.")
+	}
+
+	// Create Zipf generator
+	scale := 1000
+	r := rand.New(rand.NewSource(0))
