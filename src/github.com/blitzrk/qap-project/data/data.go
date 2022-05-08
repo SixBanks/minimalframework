@@ -38,3 +38,14 @@ func (g *generator) Flow(spread float64) (matrix.Matrix, error) {
 	// Create Zipf generator
 	scale := 1000
 	r := rand.New(rand.NewSource(0))
+	zipf := rand.NewZipf(r, 1.01, float64(g.n), uint64(scale))
+
+	// Populate frequencies of unigrams
+	k := make([]float64, g.n)
+	for i := 0; i < g.n; i++ {
+		k[i] = float64(zipf.Uint64())
+	}
+
+	// Populate ideal bigram matrix
+	m := matrix.Matrix(make([][]matrix.Element, g.n))
+	for i := 0; i < g.n; i++ {
