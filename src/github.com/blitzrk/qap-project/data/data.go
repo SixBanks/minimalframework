@@ -49,3 +49,17 @@ func (g *generator) Flow(spread float64) (matrix.Matrix, error) {
 	// Populate ideal bigram matrix
 	m := matrix.Matrix(make([][]matrix.Element, g.n))
 	for i := 0; i < g.n; i++ {
+		m[i] = make([]matrix.Element, g.n)
+		for j := 0; j < g.n; j++ {
+			e := (rand.Float64() - 0.5) * spread
+			m[i][j] = matrix.Element((k[i] * k[j]) * (1 + e))
+		}
+	}
+
+	// Scale back to 100,000 total freq
+	totalF := m.Sum()
+	s := g.fscale / totalF
+	for i := 0; i < g.n; i++ {
+		for j := 0; j < g.n; j++ {
+			m[i][j] = matrix.Element(math.Floor(float64(m[i][j]) * s))
+		}
