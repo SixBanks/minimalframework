@@ -63,3 +63,7 @@ func (g *generator) Flow(spread float64) (matrix.Matrix, error) {
 		for j := 0; j < g.n; j++ {
 			m[i][j] = matrix.Element(math.Floor(float64(m[i][j]) * s))
 		}
+	}
+
+	return m, nil
+}
