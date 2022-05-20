@@ -3,4 +3,4 @@ package main
 import (
 	"fmt"
 	"github.com/blitzrk/qap-project/data"
-	"github.com/blitzrk/qa
+	"github.com/blitzrk/qap-project/s
