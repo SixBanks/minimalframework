@@ -12,4 +12,4 @@ import (
 
 var (
 	fact   func(int) uint
-	logger *lo
+	logger *log.Logger
