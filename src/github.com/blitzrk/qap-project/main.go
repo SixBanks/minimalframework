@@ -11,4 +11,5 @@ import (
 )
 
 var (
-	fact   func(
+	fact   func(int) uint
+	l
