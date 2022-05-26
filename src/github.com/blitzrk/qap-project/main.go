@@ -15,4 +15,5 @@ var (
 	logger *log.Logger
 )
 
-func in
+func init() {
+	
