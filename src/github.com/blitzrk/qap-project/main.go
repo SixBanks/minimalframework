@@ -16,4 +16,4 @@ var (
 )
 
 func init() {
-	
+	fact = f
