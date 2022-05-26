@@ -13,3 +13,6 @@ import (
 var (
 	fact   func(int) uint
 	logger *log.Logger
+)
+
+func in
