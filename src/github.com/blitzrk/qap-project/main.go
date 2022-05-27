@@ -16,4 +16,6 @@ var (
 )
 
 func init() {
-	fact = f
+	fact = factorial()
+
+	fi
