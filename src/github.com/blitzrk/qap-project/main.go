@@ -18,4 +18,4 @@ var (
 func init() {
 	fact = factorial()
 
-	fi
+	file, err := os.OpenFil
