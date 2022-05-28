@@ -18,4 +18,4 @@ var (
 func init() {
 	fact = factorial()
 
-	file, err := os.OpenFil
+	file, err := os.OpenFile("data.log
