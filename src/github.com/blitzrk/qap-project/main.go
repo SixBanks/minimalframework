@@ -20,4 +20,4 @@ func init() {
 
 	file, err := os.OpenFile("data.log", os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
-		log.Fatalln("Failed to open log file", o
+		log.Fatalln("Failed to open log file", os.Stderr, ":
