@@ -22,4 +22,4 @@ func init() {
 	if err != nil {
 		log.Fatalln("Failed to open log file", os.Stderr, ":", err)
 	}
-	logger = lo
+	logger = log.New(file, 
