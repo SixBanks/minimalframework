@@ -27,4 +27,5 @@ func init() {
 
 func main() {
 	// Setup data generator
-	n := 
+	n := 8
+	gen := da
