@@ -26,4 +26,4 @@ func init() {
 }
 
 func main() {
-	// Setup d
+	// Setup data gener
