@@ -28,4 +28,4 @@ func init() {
 func main() {
 	// Setup data generator
 	n := 8
-	gen := da
+	gen := data.New(n, 10
