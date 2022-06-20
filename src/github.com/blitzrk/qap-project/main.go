@@ -30,4 +30,4 @@ func main() {
 	n := 8
 	gen := data.New(n, 100000)
 
-	// Generate
+	// Generate data
