@@ -31,3 +31,4 @@ func main() {
 	gen := data.New(n, 100000)
 
 	// Generate data
+	dist, 
