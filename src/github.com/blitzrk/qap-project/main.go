@@ -31,4 +31,5 @@ func main() {
 	gen := data.New(n, 100000)
 
 	// Generate data
-	dist, err := gen.Distanc
+	dist, err := gen.Distance()
+	if err != 
