@@ -33,4 +33,6 @@ func main() {
 	// Generate data
 	dist, err := gen.Distance()
 	if err != nil {
-		pa
+		panic(err)
+	}
+	flo
