@@ -32,4 +32,5 @@ func main() {
 
 	// Generate data
 	dist, err := gen.Distance()
-	if err != 
+	if err != nil {
+		pa
