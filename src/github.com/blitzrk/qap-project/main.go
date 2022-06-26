@@ -35,4 +35,4 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	flo
+	flow, err := gen.F
