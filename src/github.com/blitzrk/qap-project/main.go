@@ -35,4 +35,5 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	flow, err := gen.F
+	flow, err := gen.Flow(1 / 3)
+	if
