@@ -36,4 +36,5 @@ func main() {
 		panic(err)
 	}
 	flow, err := gen.Flow(1 / 3)
-	if err != n
+	if err != nil {
+		pa
