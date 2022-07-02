@@ -39,4 +39,5 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	cost, err := dist.Co
+	cost, err := dist.Combine(flow)
+	
