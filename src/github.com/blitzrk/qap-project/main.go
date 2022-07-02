@@ -37,4 +37,6 @@ func main() {
 	}
 	flow, err := gen.Flow(1 / 3)
 	if err != nil {
-		pa
+		panic(err)
+	}
+	cost, 
