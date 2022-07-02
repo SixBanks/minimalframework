@@ -39,4 +39,4 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	cost, 
+	cost, err := dist.Co
