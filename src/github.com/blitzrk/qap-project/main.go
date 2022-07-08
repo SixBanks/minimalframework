@@ -40,4 +40,5 @@ func main() {
 		panic(err)
 	}
 	cost, err := dist.Combine(flow)
-	if err != nil
+	if err != nil {
+		panic
