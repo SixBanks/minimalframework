@@ -43,3 +43,5 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	logger.Println("D
