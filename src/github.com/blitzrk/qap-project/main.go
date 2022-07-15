@@ -44,4 +44,5 @@ func main() {
 		panic(err)
 	}
 
-	logger.Println("Distance ma
+	logger.Println("Distance matrix:")
+	logger.Pr
