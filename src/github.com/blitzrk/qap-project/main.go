@@ -46,3 +46,4 @@ func main() {
 
 	logger.Println("Distance matrix:")
 	logger.Println(dist)
+	logger.Pri
