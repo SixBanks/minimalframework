@@ -45,4 +45,4 @@ func main() {
 	}
 
 	logger.Println("Distance matrix:")
-	logger.Pr
+	logger.Println(dist)
