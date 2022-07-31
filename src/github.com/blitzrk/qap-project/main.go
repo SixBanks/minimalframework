@@ -47,4 +47,5 @@ func main() {
 	logger.Println("Distance matrix:")
 	logger.Println(dist)
 	logger.Println()
-	logger.Println("Flow matrix:"
+	logger.Println("Flow matrix:")
+	logger.Println(f
