@@ -48,4 +48,6 @@ func main() {
 	logger.Println(dist)
 	logger.Println()
 	logger.Println("Flow matrix:")
-	logger.Println(f
+	logger.Println(flow)
+
+	// 
