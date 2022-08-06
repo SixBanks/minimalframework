@@ -50,4 +50,5 @@ func main() {
 	logger.Println("Flow matrix:")
 	logger.Println(flow)
 
-	// Setup run
+	// Setup runner
+	maxTime :=
