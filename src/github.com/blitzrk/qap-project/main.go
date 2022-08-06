@@ -51,4 +51,4 @@ func main() {
 	logger.Println(flow)
 
 	// Setup runner
-	maxTime :=
+	maxTime := time.NewTime
