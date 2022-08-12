@@ -52,4 +52,5 @@ func main() {
 
 	// Setup runner
 	maxTime := time.NewTimer(15 * time.Minute)
-	runner := &search.Runne
+	runner := &search.Runner{
+		NumC
