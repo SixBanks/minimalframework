@@ -55,4 +55,5 @@ func main() {
 	runner := &search.Runner{
 		NumCPU:    runtime.NumCPU(),
 		Cost:      cost,
-		VarCutof
+		VarCutoff: 0,
+		ProbSize: 
