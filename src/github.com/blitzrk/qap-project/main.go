@@ -59,4 +59,5 @@ func main() {
 		ProbSize:  fact(n),
 	}
 
-	// Run on all 
+	// Run on all 4 cores
+	
