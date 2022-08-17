@@ -59,3 +59,4 @@ func main() {
 		ProbSize:  fact(n),
 	}
 
+	// Run on all 
