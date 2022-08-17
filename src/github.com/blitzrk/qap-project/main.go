@@ -56,4 +56,6 @@ func main() {
 		NumCPU:    runtime.NumCPU(),
 		Cost:      cost,
 		VarCutoff: 0,
-		ProbSize: 
+		ProbSize:  fact(n),
+	}
+
