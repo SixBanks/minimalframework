@@ -60,4 +60,4 @@ func main() {
 	}
 
 	// Run on all 4 cores
-	
+	quit := make(
