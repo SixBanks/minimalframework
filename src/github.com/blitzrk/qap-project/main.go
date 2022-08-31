@@ -62,4 +62,4 @@ func main() {
 	// Run on all 4 cores
 	quit := make(chan int)
 	results := make(chan *search.Result)
-	completed := make
+	completed := make(chan boo
