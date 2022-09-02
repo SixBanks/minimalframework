@@ -63,4 +63,4 @@ func main() {
 	quit := make(chan int)
 	results := make(chan *search.Result)
 	completed := make(chan bool)
-	go runner
+	go runner.Run(quit, res
