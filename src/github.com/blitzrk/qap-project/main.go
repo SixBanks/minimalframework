@@ -65,4 +65,6 @@ func main() {
 	completed := make(chan bool)
 	go runner.Run(quit, results, completed)
 
-loop
+loop:
+	for {
+	
