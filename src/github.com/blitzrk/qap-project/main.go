@@ -68,4 +68,4 @@ func main() {
 loop:
 	for {
 		select {
-	
+		case res :=
