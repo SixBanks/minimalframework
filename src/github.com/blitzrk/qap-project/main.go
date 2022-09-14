@@ -69,4 +69,5 @@ loop:
 	for {
 		select {
 		case res := <-results:
-			if res !
+			if res != nil {
+				
