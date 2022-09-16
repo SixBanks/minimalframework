@@ -72,4 +72,5 @@ loop:
 			if res != nil {
 				fmt.Println(res.Score, res.Perm)
 			}
-		case <-complet
+		case <-completed:
+			// B
