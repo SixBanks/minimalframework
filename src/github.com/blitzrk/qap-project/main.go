@@ -70,4 +70,5 @@ loop:
 		select {
 		case res := <-results:
 			if res != nil {
-				fmt.Println(res.Scor
+				fmt.Println(res.Score, res.Perm)
+			}
