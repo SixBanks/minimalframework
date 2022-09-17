@@ -73,4 +73,4 @@ loop:
 				fmt.Println(res.Score, res.Perm)
 			}
 		case <-completed:
-			// Bug: may lose last few sol
+			// Bug: may lose last few solutions due t
