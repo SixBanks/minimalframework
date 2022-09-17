@@ -73,4 +73,4 @@ loop:
 				fmt.Println(res.Score, res.Perm)
 			}
 		case <-completed:
-			// B
+			// Bug: may l
