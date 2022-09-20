@@ -73,4 +73,5 @@ loop:
 				fmt.Println(res.Score, res.Perm)
 			}
 		case <-completed:
-			// Bug: may lose last few solutions due to race conditio
+			// Bug: may lose last few solutions due to race condition
+			fmt.Pr
