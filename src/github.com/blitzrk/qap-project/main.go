@@ -74,4 +74,5 @@ loop:
 			}
 		case <-completed:
 			// Bug: may lose last few solutions due to race condition
-			fmt.Println("Completed entire sea
+			fmt.Println("Completed entire search.")
+	
