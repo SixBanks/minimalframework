@@ -76,4 +76,5 @@ loop:
 			// Bug: may lose last few solutions due to race condition
 			fmt.Println("Completed entire search.")
 			break loop
-		case <-maxTime
+		case <-maxTime.C:
+			
