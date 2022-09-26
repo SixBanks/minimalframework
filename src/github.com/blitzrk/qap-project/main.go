@@ -78,4 +78,4 @@ loop:
 			break loop
 		case <-maxTime.C:
 			quit <- 1
-			fmt
+			fmt.Println("Time 
