@@ -77,4 +77,5 @@ loop:
 			fmt.Println("Completed entire search.")
 			break loop
 		case <-maxTime.C:
-			
+			quit <- 1
+			fmt
