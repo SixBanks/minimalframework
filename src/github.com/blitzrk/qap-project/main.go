@@ -84,4 +84,4 @@ loop:
 	}
 }
 
-func f
+func factorial() 
