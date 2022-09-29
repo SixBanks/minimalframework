@@ -84,4 +84,4 @@ loop:
 	}
 }
 
-func factorial() 
+func factorial() func(int) uin
