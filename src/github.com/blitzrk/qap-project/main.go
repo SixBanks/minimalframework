@@ -84,4 +84,5 @@ loop:
 	}
 }
 
-func factorial() func(int) uin
+func factorial() func(int) uint {
+	memo := [
