@@ -87,4 +87,4 @@ loop:
 func factorial() func(int) uint {
 	memo := []uint{1}
 
-	fact := 
+	fact := func(i int) uint
