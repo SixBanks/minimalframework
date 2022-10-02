@@ -85,4 +85,6 @@ loop:
 }
 
 func factorial() func(int) uint {
-	memo := [
+	memo := []uint{1}
+
+	
