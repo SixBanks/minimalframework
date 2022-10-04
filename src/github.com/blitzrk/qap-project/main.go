@@ -89,4 +89,4 @@ func factorial() func(int) uint {
 
 	fact := func(i int) uint {
 		if i >= len(memo) {
-			memo 
+			memo = append(memo
