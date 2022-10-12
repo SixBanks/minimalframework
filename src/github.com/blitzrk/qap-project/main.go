@@ -92,4 +92,6 @@ func factorial() func(int) uint {
 			memo = append(memo, uint(i)*fact(i-1))
 		}
 		return memo[i]
-	
+	}
+
+	return
