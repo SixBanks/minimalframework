@@ -94,4 +94,5 @@ func factorial() func(int) uint {
 		return memo[i]
 	}
 
-	return
+	return fact
+}
