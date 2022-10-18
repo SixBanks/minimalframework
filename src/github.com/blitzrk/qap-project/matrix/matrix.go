@@ -26,3 +26,15 @@ func (m Matrix) String() string {
 	}
 
 	return strings.Join(s, "\n")
+}
+
+func (m Matrix) At(r, c int) Element {
+	return m[r][c]
+}
+
+func (m1 Matrix) Combine(m2 Matrix) (Matrix4D, error) {
+	if len(m1) != len(m2) {
+		return nil, SizeMismatchError
+	}
+
+	n := len(m1)
