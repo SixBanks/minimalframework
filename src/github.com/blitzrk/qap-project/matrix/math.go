@@ -19,3 +19,7 @@ func (m Matrix) Sum() float64 {
 	for _, r := range m {
 		for _, c := range r {
 			s += float64(c)
+		}
+	}
+	return s
+}
