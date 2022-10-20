@@ -38,3 +38,18 @@ func (m1 Matrix) Combine(m2 Matrix) (Matrix4D, error) {
 	}
 
 	n := len(m1)
+	m := make(Matrix4D, n)
+	for i := 0; i < n; i++ {
+		if len(m1[i]) != n || len(m2[i]) != n {
+			return nil, NotSquareError
+		}
+		m[i] = make([][][]Element, n)
+		for j := 0; j < n; j++ {
+			m[i][j] = make([][]Element, n)
+			for x := 0; x < n; x++ {
+				m[i][j][x] = make([]Element, n)
+				for y := 0; y < n; y++ {
+					m[i][j][x][y] = m1[i][j] * m2[x][y]
+				}
+			}
+		}
