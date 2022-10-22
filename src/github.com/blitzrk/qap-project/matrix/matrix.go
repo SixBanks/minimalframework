@@ -53,3 +53,10 @@ func (m1 Matrix) Combine(m2 Matrix) (Matrix4D, error) {
 				}
 			}
 		}
+	}
+	return m, nil
+}
+
+func (m Matrix4D) At(w, x, y, z int) Element {
+	return m[w][x][y][z]
+}
