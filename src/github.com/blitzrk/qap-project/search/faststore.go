@@ -23,3 +23,11 @@ func (fs *fastStore) Test(p *permutation) bool {
 	// up to 20 elements for 64-bit computers
 	return fs.Int.Bit(int(p.hash)) == uint(1)
 }
+
+func (fs *fastStore) Full() bool {
+	full := big.NewInt(0)
+	for i := 0; i < int(fs.size); i++ {
+		full.SetBit(full, i, 1)
+	}
+	return fs.Int.Cmp(full) == 0
+}
