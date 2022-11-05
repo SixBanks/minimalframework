@@ -2,4 +2,4 @@ package search
 
 import ()
 
-func (r *Runner) 
+func (r *Runner) Objective(p *p
