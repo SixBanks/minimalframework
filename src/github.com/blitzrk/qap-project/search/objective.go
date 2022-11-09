@@ -7,4 +7,5 @@ func (r *Runner) Objective(p *permutation) float64 {
 	n := len(p.Seq)
 
 	for i := 0; i < n; i++ {
-		for j := 0; j < n;
+		for j := 0; j < n; j++ {
+			su
