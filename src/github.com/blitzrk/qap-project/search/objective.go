@@ -8,4 +8,4 @@ func (r *Runner) Objective(p *permutation) float64 {
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
-			su
+			sum += float6
