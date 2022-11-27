@@ -12,3 +12,4 @@ func (r *Runner) Objective(p *permutation) float64 {
 		}
 	}
 
+	return
