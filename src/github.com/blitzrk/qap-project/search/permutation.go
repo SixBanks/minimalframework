@@ -66,3 +66,17 @@ func (p *permutation) NextNeighbor() *permutation {
 	// Cycle position 1
 	p.j++
 	if p.j == p.length {
+		p.i++
+		if p.i == p.length {
+			p.i = 0
+		}
+		p.j = 0
+	}
+
+	// Perform swaps
+	s := make([]uint8, p.length)
+	copy(s, p.Seq)
+	s[p.j], s[p.i] = s[p.i], s[p.j]
+
+	return NewPerm(s)
+}
