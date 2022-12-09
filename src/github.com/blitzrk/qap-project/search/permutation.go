@@ -51,3 +51,18 @@ func (p *permutation) Neighborhood() []*permutation {
 	// Find 2-exchange neighborhood
 	for i := 0; i < p.length; i++ {
 		for j := i + 1; j < p.length; j++ {
+			perm := make([]uint8, p.length)
+			copy(perm, p.Seq)
+			perm[j], perm[i] = p.Seq[i], p.Seq[j]
+			perms = append(perms, NewPerm(perm))
+		}
+	}
+
+	return perms
+}
+
+// Returns the next permutation in a 2-exchange neighborhood of p
+func (p *permutation) NextNeighbor() *permutation {
+	// Cycle position 1
+	p.j++
+	if p.j == p.length {
