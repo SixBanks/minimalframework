@@ -43,3 +43,11 @@ func RandPerm(n int) *permutation {
 }
 
 // DEPRECATED:
+// Returns all permutations within a 2-exchange neighborhood
+func (p *permutation) Neighborhood() []*permutation {
+	n := p.length
+	perms := make([]*permutation, 0, n*(n-1)/2)
+
+	// Find 2-exchange neighborhood
+	for i := 0; i < p.length; i++ {
+		for j := i + 1; j < p.length; j++ {
