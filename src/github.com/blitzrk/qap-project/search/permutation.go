@@ -93,3 +93,13 @@ func (p *permutation) NextHamming(d int) *permutation {
 	if d < 2 {
 		panic(errors.New("No permutations have a Hamming distance less than 2"))
 		return nil
+	}
+
+	s := make([]uint8, p.length)
+	copy(s, p.Seq)
+
+	for d >= 2 {
+		if d == 3 {
+			s = Exchange3Rand(s)
+			d -= 3
+		} else {
