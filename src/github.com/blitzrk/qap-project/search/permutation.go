@@ -80,3 +80,16 @@ func (p *permutation) NextNeighbor() *permutation {
 
 	return NewPerm(s)
 }
+
+// After extensive research, no efficient algorithm for enumerating all permutations within
+// a given Hamming distance could be found. As such, an approximation through sampling is used.
+//
+// IRRELEVANT: The cardinality for n=13, d=2 is 78. For d=3, it's 1,352 and for d=4, it's 15,093.
+// An increase of 1 in the Hamming distance appears to approximately lead to an order of magnitude
+// increase of 1 near n=13.
+//
+// Returns a random permutations within approximate Hamming distance d
+func (p *permutation) NextHamming(d int) *permutation {
+	if d < 2 {
+		panic(errors.New("No permutations have a Hamming distance less than 2"))
+		return nil
