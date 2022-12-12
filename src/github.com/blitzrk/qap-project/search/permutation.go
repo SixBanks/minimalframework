@@ -131,3 +131,11 @@ func Exchange3Rand(seq []uint8) []uint8 {
 	s[random[1]], s[random[2]] = s[random[2]], s[random[1]]
 	return s
 }
+
+// Hashes a permutation of fixed length n to a number between
+// 0 and n!-1 so that a related state may be toggled in a bit
+// array.
+func (p *permutation) Hash() uint64 {
+	// return hash(p.Seq, 0)
+	return p.hash
+}
