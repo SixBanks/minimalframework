@@ -103,3 +103,16 @@ func (p *permutation) NextHamming(d int) *permutation {
 			s = Exchange3Rand(s)
 			d -= 3
 		} else {
+			s = Exchange2Rand(s)
+			d -= 2
+		}
+	}
+
+	return NewPerm(s)
+}
+
+func Exchange2Rand(seq []uint8) []uint8 {
+	n := len(seq)
+	s := make([]uint8, n)
+	copy(s, seq)
+	random := rand.Perm(n)
