@@ -116,3 +116,18 @@ func Exchange2Rand(seq []uint8) []uint8 {
 	s := make([]uint8, n)
 	copy(s, seq)
 	random := rand.Perm(n)
+
+	s[random[0]], s[random[1]] = s[random[1]], s[random[0]]
+	return s
+}
+
+func Exchange3Rand(seq []uint8) []uint8 {
+	n := len(seq)
+	s := make([]uint8, n)
+	copy(s, seq)
+	random := rand.Perm(n)
+
+	s[random[0]], s[random[1]] = s[random[1]], s[random[0]]
+	s[random[1]], s[random[2]] = s[random[2]], s[random[1]]
+	return s
+}
