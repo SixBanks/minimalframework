@@ -139,3 +139,19 @@ func (p *permutation) Hash() uint64 {
 	// return hash(p.Seq, 0)
 	return p.hash
 }
+
+// Strictly speaking, this is not a hashing function since it
+// can be easily reversed. Naming conventions for variables are
+// atrocious because I wrote it half asleep. I'm not even sure
+// how it works, really.
+func (p *permutation) Unhash() []uint8 {
+	s := make([]uint8, p.length)
+
+	ints := make([]uint8, p.length)
+	for i, _ := range ints {
+		ints[i] = uint8(i + 1)
+	}
+
+	hsh := float64(p.hash)
+	for i := 0; i < p.length; i++ {
+		fac := fact(uint64(p.length - 1 - i))
