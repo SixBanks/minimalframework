@@ -179,3 +179,14 @@ func (p *permutation) Unhash() []uint8 {
 func hash(seq []uint8, pos int) uint64 {
 	n := len(seq)
 	if pos >= n {
+		return 0
+	}
+
+	s, order := seq[pos], seq[pos]
+	for i := 0; i < pos; i++ {
+		if seq[i] < s {
+			order--
+		}
+	}
+
+	return uint64(order-1)*fact(uint64(n-1-pos)) + hash(seq, pos+1)
