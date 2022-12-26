@@ -164,3 +164,18 @@ func (p *permutation) Unhash() []uint8 {
 		// Subtract out contribution to hash
 		factor := s[i]
 		for j := 0; j < i; j++ {
+			if s[j] < s[i] {
+				factor--
+			}
+		}
+		factor--
+
+		hsh -= float64(factor) * float64(fac)
+	}
+
+	return s
+}
+
+func hash(seq []uint8, pos int) uint64 {
+	n := len(seq)
+	if pos >= n {
