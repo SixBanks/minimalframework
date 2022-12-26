@@ -155,3 +155,12 @@ func (p *permutation) Unhash() []uint8 {
 	hsh := float64(p.hash)
 	for i := 0; i < p.length; i++ {
 		fac := fact(uint64(p.length - 1 - i))
+		order := int(math.Floor(hsh / float64(fac)))
+		s[i] = ints[order]
+
+		// Keep track of the remaining elements (in order)
+		ints = append(ints[:order], ints[order+1:]...)
+
+		// Subtract out contribution to hash
+		factor := s[i]
+		for j := 0; j < i; j++ {
