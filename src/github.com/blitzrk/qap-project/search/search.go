@@ -20,3 +20,15 @@ func init() {
 	}
 	logger = log.New(file, "logger: ", log.Lshortfile)
 }
+
+type Runner struct {
+	NumCPU    int
+	Cost      matrix.Matrix4D
+	VarCutoff float64
+	ProbSize  uint
+	fs        *fastStore
+}
+
+func (r *Runner) Run(stop <-chan int, resultChan chan<- *Result, complete chan<- bool) {
+	// maximize CPU usage
+	runtime.GOMAXPROCS(r.NumCPU)
