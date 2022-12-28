@@ -190,3 +190,11 @@ func hash(seq []uint8, pos int) uint64 {
 	}
 
 	return uint64(order-1)*fact(uint64(n-1-pos)) + hash(seq, pos+1)
+}
+
+func fact(i uint64) uint64 {
+	if i >= uint64(len(memo)) {
+		memo = append(memo, i*fact(i-1))
+	}
+	return memo[i]
+}
