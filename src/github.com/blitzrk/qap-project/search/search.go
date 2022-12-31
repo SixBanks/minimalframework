@@ -32,3 +32,19 @@ type Runner struct {
 func (r *Runner) Run(stop <-chan int, resultChan chan<- *Result, complete chan<- bool) {
 	// maximize CPU usage
 	runtime.GOMAXPROCS(r.NumCPU)
+	limit := make(chan int, r.NumCPU)
+
+	r.fs = NewFS(r.ProbSize)
+	n := len(r.Cost)
+	done := make(chan *Result)
+
+loop:
+	for {
+		select {
+		case limit <- 1:
+			p := RandPerm(n)
+			go r.search(p, done)
+		case res := <-done:
+			resultChan <- res
+			<-limit
+			// Check if entire solution space traversed
