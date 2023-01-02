@@ -63,3 +63,15 @@ loop:
 }
 
 type Result struct {
+	Score float64
+	Perm  []uint8
+}
+
+type runResult struct {
+	Perm   *permutation
+	Score  float64
+	Opt    bool
+	Var    float64
+	Center *permutation
+	FinalR int
+}
