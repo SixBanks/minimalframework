@@ -48,3 +48,18 @@ loop:
 			resultChan <- res
 			<-limit
 			// Check if entire solution space traversed
+			if r.fs.Full() {
+				// Let remaining processes finish
+				for i := 0; i < r.NumCPU-1; i++ {
+					resultChan <- <-done
+					<-limit
+				}
+				complete <- true
+			}
+		case <-stop:
+			break loop
+		}
+	}
+}
+
+type Result struct {
