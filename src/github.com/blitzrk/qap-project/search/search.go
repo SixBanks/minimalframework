@@ -87,3 +87,17 @@ func (r *Runner) search(perm *permutation, done chan<- *Result) {
 
 	collect := make(chan *runResult)
 	go r.findBestNeighbor(perm, collect)
+
+	// Change what gets sent here
+	result := <-collect
+	go r.interpret(result, done)
+}
+
+func (r *Runner) searchHamming(perm *permutation, dist int, done chan<- *Result) {
+	collect := make(chan *runResult)
+	go r.sampleHammingRegion(perm, dist, collect)
+
+	// Change what gets sent here
+	result := <-collect
+	go r.interpret(result, done)
+}
