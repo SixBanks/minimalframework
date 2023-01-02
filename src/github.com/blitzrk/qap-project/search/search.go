@@ -75,3 +75,15 @@ type runResult struct {
 	Center *permutation
 	FinalR int
 }
+
+func (r *Runner) search(perm *permutation, done chan<- *Result) {
+	// Check if already been to the proposed next step
+	if r.fs.Test(perm) {
+		// No need to continue further
+		done <- nil
+		return
+	}
+	r.fs.Store(perm)
+
+	collect := make(chan *runResult)
+	go r.findBestNeighbor(perm, collect)
