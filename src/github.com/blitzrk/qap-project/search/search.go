@@ -101,3 +101,16 @@ func (r *Runner) searchHamming(perm *permutation, dist int, done chan<- *Result)
 	result := <-collect
 	go r.interpret(result, done)
 }
+
+// Find best permutation
+func (r *Runner) findBestNeighbor(center *permutation, done chan<- *runResult) {
+	n := len(center.Seq)
+	size := (n * (n - 1) / 2)
+
+	var bestPerm *permutation
+	bestScore := math.Inf(1)
+	scores := make([]float64, size)
+
+	for i := 0; i < size; i++ {
+		neighbor := center.NextNeighbor()
+		r.fs.Store(neighbor)
