@@ -122,3 +122,10 @@ func (r *Runner) findBestNeighbor(center *permutation, done chan<- *runResult) {
 			bestPerm = neighbor
 		}
 	}
+
+	isLocalOpt := false
+	if centerScore := r.Objective(center); bestScore >= centerScore {
+		bestScore = centerScore
+		bestPerm = center
+		isLocalOpt = true
+	}
