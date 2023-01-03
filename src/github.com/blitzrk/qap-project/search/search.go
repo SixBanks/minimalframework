@@ -114,3 +114,11 @@ func (r *Runner) findBestNeighbor(center *permutation, done chan<- *runResult) {
 	for i := 0; i < size; i++ {
 		neighbor := center.NextNeighbor()
 		r.fs.Store(neighbor)
+		score := r.Objective(neighbor)
+		scores[i] = score
+
+		if score < bestScore {
+			bestScore = score
+			bestPerm = neighbor
+		}
+	}
