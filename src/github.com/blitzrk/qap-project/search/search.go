@@ -129,3 +129,21 @@ func (r *Runner) findBestNeighbor(center *permutation, done chan<- *runResult) {
 		bestPerm = center
 		isLocalOpt = true
 	}
+
+	// logger.Println(scores)
+	vari := variance(scores)
+
+	done <- &runResult{
+		Perm:   bestPerm,
+		Score:  bestScore,
+		Opt:    isLocalOpt,
+		Var:    vari,
+		Center: center,
+		FinalR: 2,
+	}
+}
+
+// Find best permutation from sampled APPROXIMATE Hamming space
+// TODO: predict size of Hamming for max sample size
+func (r *Runner) sampleHammingRegion(center *permutation, dist int, done chan<- *runResult) {
+	var bestPerm *permutation
