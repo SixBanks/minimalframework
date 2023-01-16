@@ -147,3 +147,14 @@ func (r *Runner) findBestNeighbor(center *permutation, done chan<- *runResult) {
 // TODO: predict size of Hamming for max sample size
 func (r *Runner) sampleHammingRegion(center *permutation, dist int, done chan<- *runResult) {
 	var bestPerm *permutation
+	bestScore := math.Inf(1)
+
+	// Determine a reasonable sample size
+	n := len(center.Seq)
+	size := (n * (n - 1) / 2) * dist * dist
+	scores := make([]float64, size)
+
+	for i := 0; i < size; i++ {
+		neighbor := center.NextHamming(dist)
+		score := r.Objective(neighbor)
+		scores[i] = score
