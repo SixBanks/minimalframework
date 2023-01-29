@@ -158,3 +158,18 @@ func (r *Runner) sampleHammingRegion(center *permutation, dist int, done chan<- 
 		neighbor := center.NextHamming(dist)
 		score := r.Objective(neighbor)
 		scores[i] = score
+
+		if score < bestScore {
+			bestScore = score
+			bestPerm = neighbor
+		}
+	}
+
+	isLocalOpt := false
+	if centerScore := r.Objective(center); bestScore >= centerScore {
+		bestScore = centerScore
+		bestPerm = center
+		isLocalOpt = true
+	}
+
+	vari := variance(scores)
