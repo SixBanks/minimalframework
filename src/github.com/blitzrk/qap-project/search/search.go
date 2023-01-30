@@ -173,3 +173,9 @@ func (r *Runner) sampleHammingRegion(center *permutation, dist int, done chan<- 
 	}
 
 	vari := variance(scores)
+
+	done <- &runResult{
+		Perm:   bestPerm,
+		Score:  bestScore,
+		Opt:    isLocalOpt,
+		Var:    vari,
