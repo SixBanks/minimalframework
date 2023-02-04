@@ -187,3 +187,17 @@ func (r *Runner) sampleHammingRegion(center *permutation, dist int, done chan<- 
 // Use a greedy algorithm search for local mins, but also use stats (variance,
 // num time ended up on same path) to determine if to expand the search to a
 // greater radius (Hamming distance)
+func (r *Runner) interpret(rs *runResult, done chan<- *Result) {
+	// If the solution is optimal, then we're done!
+	if rs.Opt {
+		logger.Println("Found optimal solution score: ", rs.Score)
+		done <- &Result{
+			Score: rs.Score,
+			Perm:  rs.Perm.Seq,
+		}
+		return
+	}
+
+	// logger.Println("Variance: ", rs.Var)
+
+	// If variance is small look more broadly
