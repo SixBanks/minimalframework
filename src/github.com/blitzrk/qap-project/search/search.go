@@ -179,3 +179,11 @@ func (r *Runner) sampleHammingRegion(center *permutation, dist int, done chan<- 
 		Score:  bestScore,
 		Opt:    isLocalOpt,
 		Var:    vari,
+		Center: center,
+		FinalR: dist,
+	}
+}
+
+// Use a greedy algorithm search for local mins, but also use stats (variance,
+// num time ended up on same path) to determine if to expand the search to a
+// greater radius (Hamming distance)
