@@ -216,3 +216,12 @@ func variance(x []float64) float64 {
 	for _, v := range x {
 		sum += v
 	}
+	mean := sum / float64(len(x))
+
+	var sumsq float64
+	for _, v := range x {
+		sumsq += math.Pow(v-mean, 2)
+	}
+	vari := sumsq / float64(len(x))
+
+	return vari
