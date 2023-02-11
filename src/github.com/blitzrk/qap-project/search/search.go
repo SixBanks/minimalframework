@@ -201,3 +201,18 @@ func (r *Runner) interpret(rs *runResult, done chan<- *Result) {
 	// logger.Println("Variance: ", rs.Var)
 
 	// If variance is small look more broadly
+	// Otherwise, just follow the best path
+	if rs.Var < r.VarCutoff {
+		logger.Println("Searching to Hamming dist ", rs.FinalR+1)
+		r.searchHamming(rs.Perm, rs.FinalR+1, done)
+	} else {
+		logger.Println("=> ", rs.Perm)
+		r.search(rs.Perm, done)
+	}
+}
+
+func variance(x []float64) float64 {
+	var sum float64
+	for _, v := range x {
+		sum += v
+	}
