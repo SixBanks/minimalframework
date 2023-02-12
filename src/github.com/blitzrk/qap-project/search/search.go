@@ -225,3 +225,4 @@ func variance(x []float64) float64 {
 	vari := sumsq / float64(len(x))
 
 	return vari
+}
