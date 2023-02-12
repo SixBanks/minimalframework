@@ -9,3 +9,13 @@ import (
 	"github.com/blitzrk/qap-project/search"
 	"io/ioutil"
 	"runtime"
+	"time"
+)
+
+func AllTests() {
+	testQAPLIBData()
+	testGen()
+	testPermutation()
+	testSearch()
+	testHash()
+}
