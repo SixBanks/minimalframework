@@ -72,3 +72,16 @@ loop:
 			// Bug: may lose last few solutions due to race condition
 			fmt.Println("Completed entire search.")
 			break loop
+		case <-maxTime.C:
+			quit <- 1
+			fmt.Println("Time out.")
+			break loop
+		}
+	}
+}
+
+func testPermutation() {
+	fs := search.NewFS(2)
+	p1 := search.NewPerm([]uint8{1, 2})
+	p2 := search.NewPerm([]uint8{2, 1})
+	fs.Store(p1)
