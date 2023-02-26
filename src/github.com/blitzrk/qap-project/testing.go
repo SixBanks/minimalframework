@@ -50,3 +50,12 @@ func testSearch() {
 	maxTime := time.NewTimer(15 * time.Minute)
 	runner := &search.Runner{
 		NumCPU:    runtime.NumCPU(),
+		Cost:      cost,
+		VarCutoff: 0,
+		ProbSize:  fact(n),
+	}
+
+	// Run on all 4 cores
+	quit := make(chan int)
+	results := make(chan *search.Result)
+	completed := make(chan bool)
