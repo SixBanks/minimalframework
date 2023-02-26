@@ -35,3 +35,18 @@ func testSearch() {
 	// Generate data
 	dist, err := gen.Distance()
 	if err != nil {
+		panic(err)
+	}
+	flow, err := gen.Flow(1 / 3)
+	if err != nil {
+		panic(err)
+	}
+	cost, err := dist.Combine(flow)
+	if err != nil {
+		panic(err)
+	}
+
+	// Setup runner
+	maxTime := time.NewTimer(15 * time.Minute)
+	runner := &search.Runner{
+		NumCPU:    runtime.NumCPU(),
