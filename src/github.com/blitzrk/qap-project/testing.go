@@ -59,3 +59,16 @@ func testSearch() {
 	quit := make(chan int)
 	results := make(chan *search.Result)
 	completed := make(chan bool)
+	go runner.Run(quit, results, completed)
+
+loop:
+	for {
+		select {
+		case res := <-results:
+			if res != nil {
+				fmt.Println(res.Score, res.Perm)
+			}
+		case <-completed:
+			// Bug: may lose last few solutions due to race condition
+			fmt.Println("Completed entire search.")
+			break loop
