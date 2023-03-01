@@ -101,3 +101,18 @@ func testGen() {
 	if err != nil {
 		panic(err)
 	}
+	flow, err := gen.Flow(1 / 3)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println()
+	fmt.Println(dist)
+	fmt.Println()
+	fmt.Println(flow)
+}
+
+func testQAPLIBData() {
+	data, err := readDat("bur26a.dat")
+	if err != nil {
+		fmt.Println(err)
