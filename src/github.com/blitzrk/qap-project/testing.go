@@ -85,3 +85,19 @@ func testPermutation() {
 	p1 := search.NewPerm([]uint8{1, 2})
 	p2 := search.NewPerm([]uint8{2, 1})
 	fs.Store(p1)
+
+	fmt.Println(p1.Hash())
+	fmt.Println(p2.Hash())
+	fmt.Println(fs.Test(p1), fs.Test(p2))
+	fmt.Println(fs.Full())
+	fs.Store(p2)
+	fmt.Println(fs.Full())
+}
+
+func testGen() {
+	gen := data.New(5, 10000)
+
+	dist, err := gen.Distance()
+	if err != nil {
+		panic(err)
+	}
