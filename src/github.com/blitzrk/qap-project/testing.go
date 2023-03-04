@@ -129,3 +129,15 @@ func testQAPLIBData() {
 	fmt.Println(times)
 	fmt.Println()
 	fmt.Println(freqs)
+	fmt.Println()
+	fmt.Println(totalF)
+}
+
+func readDat(fname string) ([]matrix.Matrix, error) {
+	f, err := ioutil.ReadFile(fname)
+	if err != nil {
+		return nil, err
+	}
+
+	return dat.Read(f), nil
+}
